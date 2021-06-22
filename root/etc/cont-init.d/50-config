@@ -24,4 +24,4 @@ fi
 chown -R abc:abc \
     /config
 
-find /app | xargs -P $(nproc) -I {} chown abc:abc {}
+find /app -type f | xargs -P $(nproc) -I {} chown abc:abc {}
