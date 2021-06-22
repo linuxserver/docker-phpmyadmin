@@ -106,7 +106,7 @@ pipeline {
       steps{
         script{
           env.EXT_RELEASE = sh(
-            script: ''' curl -sX GET 'https://api.github.com/repos/phpmyadmin/phpmyadmin/releases/latest' | jq .name | sed -e 's/^"//' -e 's/"$// ''',
+            script: ''' curl -sX GET 'https://api.github.com/repos/phpmyadmin/phpmyadmin/releases/latest' | jq .name | sed -e 's/^"//' -e 's/"$//' ''',
             returnStdout: true).trim()
             env.RELEASE_LINK = 'custom_command'
         }

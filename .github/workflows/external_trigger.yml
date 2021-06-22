@@ -18,7 +18,7 @@ jobs:
           fi
           echo "**** External trigger running off of main branch. To disable this trigger, set a Github secret named \"PAUSE_EXTERNAL_TRIGGER_PHPMYADMIN_MAIN\". ****"
           echo "**** Retrieving external version ****"
-          EXT_RELEASE=$(curl -u ${{ secrets.CR_USER }}:${{ secrets.CR_PAT }} -sX GET 'https://api.github.com/repos/phpmyadmin/phpmyadmin/releases/latest' | jq .name | sed -e 's/^"//' -e 's/"$//)
+          EXT_RELEASE=$(curl -u ${{ secrets.CR_USER }}:${{ secrets.CR_PAT }} -sX GET 'https://api.github.com/repos/phpmyadmin/phpmyadmin/releases/latest' | jq .name | sed -e 's/^"//' -e 's/"$//')
           if [ -z "${EXT_RELEASE}" ] || [ "${EXT_RELEASE}" == "null" ]; then
             echo "**** Can't retrieve external version, exiting ****"
             FAILURE_REASON="Can't retrieve external version for phpmyadmin branch main"
