@@ -1,0 +1,31 @@
+---
+
+# jenkins variables
+project_name: docker-phpmyadmin
+external_type: na
+custom_version_command: "curl -sX GET 'https://api.github.com/repos/phpmyadmin/phpmyadmin/releases/latest' | jq .name | sed -e 's/^\"//' -e 's/\"$//'"
+release_type: stable
+release_tag: latest
+ls_branch: main
+repo_vars:
+  - EXT_GIT_BRANCH = 'master'
+  - EXT_USER = 'phpmyadmin'
+  - EXT_REPO = 'phpmyadmin'
+  - CONTAINER_NAME = 'phpmyadmin'
+  - BUILD_VERSION_ARG = 'PHPMYADMIN_VERSION'
+  - LS_USER = 'linuxserver'
+  - LS_REPO = 'docker-phpmyadmin'
+  - DOCKERHUB_IMAGE = 'linuxserver/phpmyadmin'
+  - DEV_DOCKERHUB_IMAGE = 'lsiodev/phpmyadmin'
+  - PR_DOCKERHUB_IMAGE = 'lspipepr/phpmyadmin'
+  - DIST_IMAGE = 'alpine'
+  - MULTIARCH='true'
+  - CI='true'
+  - CI_WEB='true'
+  - CI_PORT='80'
+  - CI_SSL='false'
+  - CI_DELAY='120'
+  - CI_DOCKERENV='TZ=US/Pacific'
+  - CI_AUTH=''
+  - CI_WEBPATH=''
+  

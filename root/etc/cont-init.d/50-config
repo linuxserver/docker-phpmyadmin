@@ -1,0 +1,27 @@
+#!/usr/bin/with-contenv bash
+
+if [ ! -f /config/nginx/site-confs/default ] ; then
+    cp /defaults/default /config/nginx/site-confs
+fi
+
+mkdir -p /config/phpmyadmin
+
+if [ ! -f /config/phpmyadmin/config.secret.inc.php ]; then
+    cat > /config/phpmyadmin/config.secret.inc.php <<EOT
+<?php
+\$cfg['blowfish_secret'] = '$(tr -dc 'a-zA-Z0-9~!@#$%^&*_()+}{?></";.,[]=-' < /dev/urandom | fold -w 32 | head -n 1)';
+EOT
+fi
+
+if [ ! -f /config/phpmyadmin/config.user.inc.php ]; then
+    touch /config/phpmyadmin/config.user.inc.php
+fi
+
+if [ ! -f /config.user.inc.php ]; then
+    cp /defaults/config.inc.php /config/phpmyadmin/config.inc.php
+fi
+
+chown -R abc:abc \
+    /config
+
+find /app -print0 | xargs -P "$(nproc)" -I {} -0 chown abc:abc {}
