@@ -20,6 +20,7 @@ RUN \
     php7-iconv \
     php7-dom \
     php7-tokenizer \
+    php7-curl \
     php7-zip && \
     { \
         echo 'opcache.memory_consumption=128'; \
