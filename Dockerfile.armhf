@@ -44,7 +44,7 @@ RUN \
         echo 'upload_max_filesize=${UPLOAD_LIMIT}'; \
     } > /etc/php7/conf.d/phpmyadmin-misc.ini && \
   echo "**** install phpmyadmin ****" && \
-  mkdir -p /app/phpmyadmin && \
+  mkdir -p /app/www/public && \
   if [ -z ${PHPMYADMIN_VERSION+x} ]; then \
     PHPMYADMIN_VERSION=$(curl -sX GET "https://api.github.com/repos/phpmyadmin/phpmyadmin/releases/latest" \
     | awk '/tag_name/{print $4;exit}' FS='[""]' | cut -d'_' -f 2- | sed s/_/./g); \
@@ -54,8 +54,8 @@ RUN \
     "https://files.phpmyadmin.net/phpMyAdmin/${PHPMYADMIN_VERSION}/phpMyAdmin-${PHPMYADMIN_VERSION}-all-languages.tar.xz" && \
   tar xf \
     /tmp/phpmyadmin.tar.xz -C \
-    /app/phpmyadmin/ --strip-components=1 && \
-  sed -i "s@define('CONFIG_DIR'.*@define('CONFIG_DIR', '/config/phpmyadmin/');@" "/app/phpmyadmin/libraries/vendor_config.php" && \  
+    /app/www/public/ --strip-components=1 && \
+  sed -i "s@define('CONFIG_DIR'.*@define('CONFIG_DIR', '/config/phpmyadmin/');@" "/app/www/public/libraries/vendor_config.php" && \  
   sed -i 's@;clear_env = no@clear_env = no@' "/etc/php7/php-fpm.d/www.conf" && \
   rm -rf \
     /tmp/*
