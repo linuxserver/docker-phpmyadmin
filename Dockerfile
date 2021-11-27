@@ -1,4 +1,4 @@
-FROM ghcr.io/linuxserver/baseimage-alpine-nginx:3.14
+FROM ghcr.io/linuxserver/baseimage-alpine-nginx:3.15
 
 ARG BUILD_DATE
 ARG VERSION
@@ -13,27 +13,27 @@ ENV UPLOAD_LIMIT 8192K
 RUN \
   apk add -U --upgrade --no-cache \
     curl \
-    php7-gd \
-    php7-bz2 \
-    php7-mysqli \
-    php7-opcache \
-    php7-iconv \
-    php7-dom \
-    php7-tokenizer \
-    php7-curl \
-    php7-zip && \
+    php8-gd \
+    php8-bz2 \
+    php8-mysqli \
+    php8-opcache \
+    php8-iconv \
+    php8-dom \
+    php8-tokenizer \
+    php8-curl \
+    php8-zip && \
     { \
         echo 'opcache.memory_consumption=128'; \
         echo 'opcache.interned_strings_buffer=8'; \
         echo 'opcache.max_accelerated_files=4000'; \
         echo 'opcache.revalidate_freq=2'; \
         echo 'opcache.fast_shutdown=1'; \
-    } > /etc/php7/conf.d/opcache-recommended.ini; \
+    } > /etc/php8/conf.d/opcache-recommended.ini; \
     \
     { \
         echo 'session.cookie_httponly=1'; \
         echo 'session.use_strict_mode=1'; \
-    } > /etc/php7/conf.d/session-strict.ini; \
+    } > /etc/php8/conf.d/session-strict.ini; \
     \
     { \
         echo 'allow_url_fopen=Off'; \
@@ -42,7 +42,7 @@ RUN \
         echo 'memory_limit=${MEMORY_LIMIT}'; \
         echo 'post_max_size=${UPLOAD_LIMIT}'; \
         echo 'upload_max_filesize=${UPLOAD_LIMIT}'; \
-    } > /etc/php7/conf.d/phpmyadmin-misc.ini && \
+    } > /etc/php8/conf.d/phpmyadmin-misc.ini && \
   echo "**** install phpmyadmin ****" && \
   mkdir -p /app/www/public && \
   if [ -z ${PHPMYADMIN_VERSION+x} ]; then \
@@ -56,7 +56,7 @@ RUN \
     /tmp/phpmyadmin.tar.xz -C \
     /app/www/public/ --strip-components=1 && \
   sed -i "s@define('CONFIG_DIR'.*@define('CONFIG_DIR', '/config/phpmyadmin/');@" "/app/www/public/libraries/vendor_config.php" && \  
-  sed -i 's@;clear_env = no@clear_env = no@' "/etc/php7/php-fpm.d/www.conf" && \
+  sed -i 's@;clear_env = no@clear_env = no@' "/etc/php8/php-fpm.d/www.conf" && \
   rm -rf \
     /tmp/*
 
