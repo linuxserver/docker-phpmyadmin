@@ -22,6 +22,10 @@ RUN \
     php8-tokenizer \
     php8-curl \
     php8-zip && \
+  echo "**** configure php-fpm to pass env vars ****" && \
+  sed -E -i 's/^;?clear_env ?=.*$/clear_env = no/g' /etc/php8/php-fpm.d/www.conf && \
+  grep -qxF 'clear_env = no' /etc/php8/php-fpm.d/www.conf || echo 'clear_env = no' >> /etc/php8/php-fpm.d/www.conf && \
+  echo "**** setup php opcache ****" && \
     { \
         echo 'opcache.memory_consumption=128'; \
         echo 'opcache.interned_strings_buffer=8'; \
@@ -56,7 +60,6 @@ RUN \
     /tmp/phpmyadmin.tar.xz -C \
     /app/www/public/ --strip-components=1 && \
   sed -i "s@define('CONFIG_DIR'.*@define('CONFIG_DIR', '/config/phpmyadmin/');@" "/app/www/public/libraries/vendor_config.php" && \  
-  sed -i 's@;clear_env = no@clear_env = no@' "/etc/php8/php-fpm.d/www.conf" && \
   rm -rf \
     /tmp/*
 
