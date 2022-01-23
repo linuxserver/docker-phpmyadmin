@@ -13,6 +13,7 @@ ENV UPLOAD_LIMIT 8192K
 RUN \
   apk add -U --upgrade --no-cache \
     curl \
+    jq \
     php7-gd \
     php7-bz2 \
     php7-mysqli \
@@ -22,32 +23,32 @@ RUN \
     php7-tokenizer \
     php7-curl \
     php7-zip && \
-    { \
-        echo 'opcache.memory_consumption=128'; \
-        echo 'opcache.interned_strings_buffer=8'; \
-        echo 'opcache.max_accelerated_files=4000'; \
-        echo 'opcache.revalidate_freq=2'; \
-        echo 'opcache.fast_shutdown=1'; \
-    } > /etc/php7/conf.d/opcache-recommended.ini; \
-    \
-    { \
-        echo 'session.cookie_httponly=1'; \
-        echo 'session.use_strict_mode=1'; \
-    } > /etc/php7/conf.d/session-strict.ini; \
-    \
-    { \
-        echo 'allow_url_fopen=Off'; \
-        echo 'max_execution_time=${MAX_EXECUTION_TIME}'; \
-        echo 'max_input_vars=10000'; \
-        echo 'memory_limit=${MEMORY_LIMIT}'; \
-        echo 'post_max_size=${UPLOAD_LIMIT}'; \
-        echo 'upload_max_filesize=${UPLOAD_LIMIT}'; \
-    } > /etc/php7/conf.d/phpmyadmin-misc.ini && \
+  { \
+      echo 'opcache.memory_consumption=128'; \
+      echo 'opcache.interned_strings_buffer=8'; \
+      echo 'opcache.max_accelerated_files=4000'; \
+      echo 'opcache.revalidate_freq=2'; \
+      echo 'opcache.fast_shutdown=1'; \
+  } > /etc/php7/conf.d/opcache-recommended.ini; \
+  \
+  { \
+      echo 'session.cookie_httponly=1'; \
+      echo 'session.use_strict_mode=1'; \
+  } > /etc/php7/conf.d/session-strict.ini; \
+  \
+  { \
+      echo 'allow_url_fopen=Off'; \
+      echo 'max_execution_time=${MAX_EXECUTION_TIME}'; \
+      echo 'max_input_vars=10000'; \
+      echo 'memory_limit=${MEMORY_LIMIT}'; \
+      echo 'post_max_size=${UPLOAD_LIMIT}'; \
+      echo 'upload_max_filesize=${UPLOAD_LIMIT}'; \
+  } > /etc/php7/conf.d/phpmyadmin-misc.ini && \
   echo "**** install phpmyadmin ****" && \
   mkdir -p /app/phpmyadmin && \
   if [ -z ${PHPMYADMIN_VERSION+x} ]; then \
-    PHPMYADMIN_VERSION=$(curl -sX GET "https://api.github.com/repos/phpmyadmin/phpmyadmin/releases/latest" \
-    | awk '/tag_name/{print $4;exit}' FS='[""]' | cut -d'_' -f 2- | sed s/_/./g); \
+    PHPMYADMIN_VERSION=$(curl -sX GET "https://api.github.com/repos/phpmyadmin/phpmyadmin/releases" \
+    | jq -r 'first(.[] | select(.name | startswith("5"))) | .name'); \
   fi && \
   curl -s -o \
     /tmp/phpmyadmin.tar.xz -L \

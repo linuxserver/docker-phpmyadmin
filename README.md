@@ -231,4 +231,5 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
+* **23.01.22:** - Pin versions to 5.x.x.
 * **14.06.21:** - Initial Release.
