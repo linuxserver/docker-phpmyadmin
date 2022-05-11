@@ -48,7 +48,7 @@ RUN \
   mkdir -p /app/phpmyadmin && \
   if [ -z ${PHPMYADMIN_VERSION+x} ]; then \
     PHPMYADMIN_VERSION=$(curl -sX GET "https://api.github.com/repos/phpmyadmin/phpmyadmin/releases" \
-    | jq -r 'first(.[] | select(.name | startswith("5")) | select (.prerelease==false)) | .name'); \
+    | jq -r 'first(.[] | select(.name | startswith("5.2")) | select (.prerelease==false)) | .name'); \
   fi && \
   curl -s -o \
     /tmp/phpmyadmin.tar.xz -L \
