@@ -56,7 +56,7 @@ RUN \
   tar xf \
     /tmp/phpmyadmin.tar.xz -C \
     /app/phpmyadmin/ --strip-components=1 && \
-  sed -i "s@define('CONFIG_DIR'.*@define('CONFIG_DIR', '/config/phpmyadmin/');@" "/app/phpmyadmin/libraries/vendor_config.php" && \  
+  sed -i "s@'configFile' =>.*@'configFile' => '/config/phpmyadmin/config.inc.php',@" "/app/phpmyadmin/libraries/vendor_config.php" && \
   sed -i 's@;clear_env = no@clear_env = no@' "/etc/php7/php-fpm.d/www.conf" && \
   rm -rf \
     /tmp/*
