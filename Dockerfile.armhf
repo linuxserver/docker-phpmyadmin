@@ -47,8 +47,9 @@ RUN \
   echo "**** install phpmyadmin ****" && \
   mkdir -p /app/phpmyadmin && \
   if [ -z ${PHPMYADMIN_VERSION+x} ]; then \
-    PHPMYADMIN_VERSION=$(curl -sX GET "https://api.github.com/repos/phpmyadmin/phpmyadmin/releases" \
-    | jq -r 'first(.[] | select(.name | startswith("5.2")) | select (.prerelease==false)) | .name'); \
+    PHPMYADMIN_VERSION=$(curl -sX GET 'https://api.github.com/repos/phpmyadmin/phpmyadmin/releases' \
+    | jq -r '.[] | select (.prerelease==false)' \
+    | jq -rs 'max_by(.name | split(".") | map(tonumber)) | .name'); \
   fi && \
   curl -s -o \
     /tmp/phpmyadmin.tar.xz -L \
