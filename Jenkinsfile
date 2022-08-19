@@ -107,7 +107,7 @@ pipeline {
       steps{
         script{
           env.EXT_RELEASE = sh(
-            script: ''' curl -sX GET 'https://api.github.com/repos/phpmyadmin/phpmyadmin/releases' | jq -r '.[] | select (.prerelease==false)' | jq -rs 'max_by(.name | split(".") | map(tonumber)) | .name' ''',
+            script: ''' curl -sL 'https://www.phpmyadmin.net/home_page/version.txt' | head -n 1 | cut -d ' ' -f 1 ''',
             returnStdout: true).trim()
             env.RELEASE_LINK = 'custom_command'
         }

@@ -3,7 +3,7 @@
 # jenkins variables
 project_name: docker-phpmyadmin
 external_type: na
-custom_version_command: "curl -sX GET 'https://api.github.com/repos/phpmyadmin/phpmyadmin/releases' | jq -r '.[] | select (.prerelease==false)' | jq -rs 'max_by(.name | split(\".\") | map(tonumber)) | .name'"
+custom_version_command: "curl -sL 'https://www.phpmyadmin.net/home_page/version.txt' | head -n 1 | cut -d ' ' -f 1"
 release_type: stable
 release_tag: latest
 ls_branch: main
