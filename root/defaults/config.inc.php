@@ -1,5 +1,7 @@
 <?php
 
+// Sourced from https://github.com/phpmyadmin/docker/blob/master/config.inc.php
+
 require('/config/phpmyadmin/config.secret.inc.php');
 
 /* Ensure we got the environment */
