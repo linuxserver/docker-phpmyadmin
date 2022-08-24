@@ -80,11 +80,12 @@ RUN \
     /tmp/phpmyadmin.tar.xz -C \
     /app/www/public/ --strip-components=1 && \
   sed -i "s@'configFile' =>.*@'configFile' => '/config/phpmyadmin/config.inc.php',@" "/app/www/public/libraries/vendor_config.php" && \    
-  echo "**** cleanup ****" && \  
+  echo "**** cleanup ****" && \
   apk del --purge \
     build-dependencies && \
   rm -rf \
-    /tmp/*
+    /tmp/* \
+    /app/www/public/setup
 
 COPY root/ /
 
