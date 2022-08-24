@@ -18,14 +18,15 @@ RUN \
   apk add -U --upgrade --no-cache \
     curl \
     jq \
-    php8-gd \
     php8-bz2 \
+    php8-curl \
+    php8-dom \
+    php8-gd \
+    php8-iconv \
     php8-mysqli \
     php8-opcache \
-    php8-iconv \
-    php8-dom \
+    php8-pecl-uploadprogress \
     php8-tokenizer \
-    php8-curl \
     php8-zip && \
   echo "**** configure php-fpm to pass env vars ****" && \
   sed -E -i 's/^;?clear_env ?=.*$/clear_env = no/g' /etc/php8/php-fpm.d/www.conf && \
