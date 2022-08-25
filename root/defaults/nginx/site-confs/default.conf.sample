@@ -1,5 +1,12 @@
 ## Version 2022/08/20 - Changelog: https://github.com/linuxserver/docker-phpmyadmin/commits/main/root/defaults/nginx/site-confs/default.conf.sample
 
+map $sent_http_content_type $expires {
+    default         off;
+    ~js/            max;
+    ~themes/        max;
+    ~doc/           max;
+}
+
 server {
     listen 80 default_server;
     listen [::]:80 default_server;
@@ -17,13 +24,9 @@ server {
         #auth_basic "Restricted";
         #auth_basic_user_file /config/nginx/.htpasswd;
 
-        try_files $uri $uri/ /index.php$is_args$args;
-    }
+        expires $expires;
 
-    # set expiration of assets to MAX for caching
-    location ~* \.(ico|css|js|png|gif)(\?[0-9]+)?$ {
-        expires max;
-        log_not_found off;
+        try_files $uri $uri/ /index.php$is_args$args;
     }
 
     location ~ ^(.+\.php)(.*)$ {
