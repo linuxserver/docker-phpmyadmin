@@ -19,14 +19,15 @@ RUN \
   apk add -U --upgrade --no-cache \
     curl \
     jq \
-    php8-gd \
     php8-bz2 \
+    php8-curl \
+    php8-dom \
+    php8-gd \
+    php8-iconv \
     php8-mysqli \
     php8-opcache \
-    php8-iconv \
-    php8-dom \
+    php8-pecl-uploadprogress \
     php8-tokenizer \
-    php8-curl \
     php8-zip && \
   echo "**** configure php-fpm to pass env vars ****" && \
   sed -E -i 's/^;?clear_env ?=.*$/clear_env = no/g' /etc/php8/php-fpm.d/www.conf && \
@@ -79,11 +80,12 @@ RUN \
     /tmp/phpmyadmin.tar.xz -C \
     /app/www/public/ --strip-components=1 && \
   sed -i "s@'configFile' =>.*@'configFile' => '/config/phpmyadmin/config.inc.php',@" "/app/www/public/libraries/vendor_config.php" && \    
-  echo "**** cleanup ****" && \  
+  echo "**** cleanup ****" && \
   apk del --purge \
     build-dependencies && \
   rm -rf \
-    /tmp/*
+    /tmp/* \
+    /app/www/public/setup
 
 COPY root/ /
 
