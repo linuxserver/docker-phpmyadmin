@@ -17,7 +17,7 @@ if [ ! -f /config/phpmyadmin/config.inc.php ]; then
     cp /defaults/config.inc.php /config/phpmyadmin/config.inc.php
 fi
 
-chown -R abc:abc \
+lsiown -R abc:abc \
     /config
 
-find /app -print0 | xargs -P "$(nproc)" -I {} -0 chown abc:abc {}
+find /app -print0 | xargs -P "$(nproc)" -I {} -0 lsiown abc:abc {}

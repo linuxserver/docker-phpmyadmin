@@ -1,4 +1,4 @@
-FROM ghcr.io/linuxserver/baseimage-alpine-nginx:3.15
+FROM ghcr.io/linuxserver/baseimage-alpine-nginx:3.16
 
 ARG BUILD_DATE
 ARG VERSION
@@ -17,8 +17,6 @@ RUN \
     gpg-agent \
     gnupg-dirmngr && \
   apk add -U --upgrade --no-cache \
-    curl \
-    jq \
     php8-bz2 \
     php8-curl \
     php8-dom \
