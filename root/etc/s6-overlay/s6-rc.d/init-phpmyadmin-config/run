@@ -1,6 +1,8 @@
 #!/usr/bin/with-contenv bash
 
-mkdir -p /config/phpmyadmin
+mkdir -p \
+    /config/phpmyadmin \
+    /app/www/public/tmp
 
 if [ ! -f /config/phpmyadmin/config.secret.inc.php ]; then
     cat > /config/phpmyadmin/config.secret.inc.php <<EOT
@@ -18,6 +20,5 @@ if [ ! -f /config/phpmyadmin/config.inc.php ]; then
 fi
 
 lsiown -R abc:abc \
-    /config
-
-find /app -print0 | xargs -P "$(nproc)" -I {} -0 lsiown abc:abc {}
+    /config \
+    /app/www/public/tmp
