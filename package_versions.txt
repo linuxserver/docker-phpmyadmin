@@ -12,7 +12,7 @@ busybox-1.35.0-r17
 ca-certificates-20220614-r0
 ca-certificates-bundle-20220614-r0
 coreutils-9.1-r0
-curl-7.83.1-r4
+curl-7.83.1-r5
 expat-2.5.0-r0
 freetype-2.12.1-r0
 git-2.36.3-r0
