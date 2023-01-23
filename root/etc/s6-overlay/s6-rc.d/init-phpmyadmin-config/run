@@ -20,6 +20,7 @@ if [ ! -f /config/phpmyadmin/config.inc.php ]; then
     cp /defaults/config.inc.php /config/phpmyadmin/config.inc.php
 fi
 
+# permissions
 lsiown -R abc:abc \
     /config \
     /app/www/public/tmp
