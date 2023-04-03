@@ -75,7 +75,7 @@ RUN \
       || gpg --batch -q --keyserver keyserver.pgp.com --recv-keys "$PHPMYADMIN_RELEASE_GPG_KEY" \
       || gpg --batch -q --keyserver keys.openpgp.org --recv-keys "$PHPMYADMIN_RELEASE_GPG_KEY" && \
   if ! gpg --batch -q --verify "/tmp/phpmyadmin.tar.xz.asc" "/tmp/phpmyadmin.tar.xz"; then \
-    echo "File signature mismatch" \
+    echo "File signature mismatch"; \
     exit 1; \
   fi && \
   tar xf \
