@@ -2,7 +2,7 @@ NAME                              VERSION                TYPE
 alpine-baselayout                 3.4.0-r0               apk           
 alpine-baselayout-data            3.4.0-r0               apk           
 alpine-keys                       2.4-r1                 apk           
-alpine-release                    3.17.2-r0              apk           
+alpine-release                    3.17.3-r0              apk           
 aom-libs                          3.5.0-r0               apk           
 apache2-utils                     2.4.56-r0              apk           
 apk-tools                         2.12.10-r1             apk           
@@ -148,7 +148,7 @@ symfony/var-exporter              v5.4.19                php-composer
 tecnickcom/tcpdf                  6.6.2                  php-composer  
 thecodingmachine/safe             v1.3.3                 php-composer  
 twig/twig                         v3.5.0                 php-composer  
-tzdata                            2023b-r1               apk           
+tzdata                            2023c-r0               apk           
 utmps-libs                        0.1.2.0-r1             apk           
 web-auth/cose-lib                 v3.3.12                php-composer  
 web-auth/metadata-service         v3.3.12                php-composer  
@@ -158,4 +158,4 @@ williamdes/mariadb-mysql-kbs      v1.2.14                php-composer
 xz                                5.2.9-r0               apk           
 xz-libs                           5.2.9-r0               apk           
 zlib                              1.2.13-r0              apk           
-zstd-libs                         1.5.2-r9               apk           
+zstd-libs                         1.5.5-r0               apk           
