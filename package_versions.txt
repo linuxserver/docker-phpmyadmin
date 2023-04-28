@@ -27,7 +27,7 @@ dasprid/enum                      1.0.3                  php-composer
 fgrosse/phpasn1                   v2.5.0                 php-composer  
 fig/http-message-util             1.1.5                  php-composer  
 freetype                          2.12.1-r0              apk           
-git                               2.38.4-r1              apk           
+git                               2.38.5-r0              apk           
 google/recaptcha                  1.2.4                  php-composer  
 jq                                1.6-r2                 apk           
 league/uri                        6.4.0                  php-composer  
