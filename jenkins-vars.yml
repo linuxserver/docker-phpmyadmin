@@ -7,6 +7,7 @@ custom_version_command: "curl -sL 'https://www.phpmyadmin.net/home_page/version.
 release_type: stable
 release_tag: latest
 ls_branch: main
+build_armhf: false
 repo_vars:
   - EXT_GIT_BRANCH = 'master'
   - EXT_USER = 'phpmyadmin'
