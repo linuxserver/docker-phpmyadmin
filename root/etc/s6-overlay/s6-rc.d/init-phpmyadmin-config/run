@@ -20,6 +20,18 @@ if [ ! -f /config/phpmyadmin/config.inc.php ]; then
     cp /defaults/config.inc.php /config/phpmyadmin/config.inc.php
 fi
 
+# Set up themes
+if [[ -d "/config/themes" && ! -L "/app/www/public/themes" ]]; then
+    cp -R /app/www/public/themes/* /config/themes
+    rm -rf "/app/www/public/themes"
+fi
+if [[ ! -d "/config/themes" && ! -L "/app/www/public/themes" ]]; then
+    mv "/app/www/public/themes" /config/themes
+fi
+if [[ -d "/config/themes" && ! -L "/app/www/public/themes" ]]; then
+    ln -s "/config/themes" "/app/www/public/themes"
+fi
+
 # permissions
 lsiown -R abc:abc \
     /config \

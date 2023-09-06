@@ -232,6 +232,7 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
+* **06.09.23:** - Add support for custom themes.
 * **25.05.23:** - Rebase to Alpine 3.18, deprecate armhf.
 * **13.04.23:** - Move ssl.conf include to default.conf.
 * **20.01.23:** - Rebase to alpine 3.17 with php8.1.
