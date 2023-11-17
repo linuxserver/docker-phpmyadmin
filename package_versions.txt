@@ -14,8 +14,8 @@ bash                              5.2.15-r5               apk
 beberlei/assert                   v3.3.2                  php-composer  
 brick/math                        0.8.17                  php-composer  
 brotli-libs                       1.0.9-r14               apk           
-busybox                           1.36.1-r4               apk           
-busybox-binsh                     1.36.1-r4               apk           
+busybox                           1.36.1-r5               apk           
+busybox-binsh                     1.36.1-r5               apk           
 ca-certificates                   20230506-r0             apk           
 ca-certificates-bundle            20230506-r0             apk           
 code-lts/u2f-php-server           v1.2.1                  php-composer  
@@ -37,7 +37,7 @@ libavif                           0.11.1-r2               apk
 libbsd                            0.11.7-r1               apk           
 libbz2                            1.0.8-r5                apk           
 libc-utils                        0.7.2-r5                apk           
-libcrypto3                        3.1.4-r0                apk           
+libcrypto3                        3.1.4-r1                apk           
 libcurl                           8.4.0-r0                apk           
 libdav1d                          1.2.1-r0                apk           
 libedit                           20221030.3.1-r1         apk           
@@ -52,7 +52,7 @@ libncursesw                       6.4_p20230506-r0        apk
 libpng                            1.6.39-r3               apk           
 libproc2                          4.0.4-r0                apk           
 libsm                             1.2.4-r1                apk           
-libssl3                           3.1.4-r0                apk           
+libssl3                           3.1.4-r1                apk           
 libunistring                      1.1-r1                  apk           
 libuuid                           2.38.1-r8               apk           
 libwebp                           1.3.2-r0                apk           
@@ -76,7 +76,7 @@ nghttp2-libs                      1.57.0-r0               apk
 nginx                             1.24.0-r7               apk           
 nikic/fast-route                  v1.3.0                  php-composer  
 oniguruma                         6.9.8-r1                apk           
-openssl                           3.1.4-r0                apk           
+openssl                           3.1.4-r1                apk           
 paragonie/constant_time_encoding  v2.6.3                  php-composer  
 paragonie/random_compat           v9.99.100               php-composer  
 paragonie/sodium_compat           v1.19.0                 php-composer  
@@ -130,7 +130,7 @@ skalibs                           2.13.1.1-r1             apk
 slim/psr7                         1.4                     php-composer  
 spomky-labs/base64url             v2.0.4                  php-composer  
 spomky-labs/cbor-php              v1.1.1                  php-composer  
-ssl_client                        1.36.1-r4               apk           
+ssl_client                        1.36.1-r5               apk           
 symfony/cache                     v5.4.19                 php-composer  
 symfony/cache-contracts           v2.5.2                  php-composer  
 symfony/config                    v5.4.19                 php-composer  
