@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:1
 
-FROM ghcr.io/linuxserver/baseimage-alpine-nginx:3.18
+FROM ghcr.io/linuxserver/baseimage-alpine-nginx:3.19
 
 # set version label
 ARG BUILD_DATE
@@ -21,17 +21,17 @@ RUN \
     gpg-agent \
     gnupg-dirmngr && \
   apk add --no-cache \
-    php82-bz2 \
-    php82-dom \
-    php82-gd \
-    php82-mysqli \
-    php82-opcache \
-    php82-pecl-uploadprogress \
-    php82-tokenizer && \
+    php83-bz2 \
+    php83-dom \
+    php83-gd \
+    php83-mysqli \
+    php83-opcache \
+    php83-pecl-uploadprogress \
+    php83-tokenizer && \
   echo "**** configure php-fpm to pass env vars ****" && \
-  sed -E -i 's/^;?clear_env ?=.*$/clear_env = no/g' /etc/php82/php-fpm.d/www.conf && \
-  grep -qxF 'clear_env = no' /etc/php82/php-fpm.d/www.conf || echo 'clear_env = no' >> /etc/php82/php-fpm.d/www.conf && \
-  echo "env[PATH] = /usr/local/bin:/usr/bin:/bin" >> /etc/php82/php-fpm.conf && \
+  sed -E -i 's/^;?clear_env ?=.*$/clear_env = no/g' /etc/php83/php-fpm.d/www.conf && \
+  grep -qxF 'clear_env = no' /etc/php83/php-fpm.d/www.conf || echo 'clear_env = no' >> /etc/php83/php-fpm.d/www.conf && \
+  echo "env[PATH] = /usr/local/bin:/usr/bin:/bin" >> /etc/php83/php-fpm.conf && \
   echo "**** setup php opcache ****" && \  
   { \
       echo 'opcache.memory_consumption=128'; \
@@ -39,12 +39,12 @@ RUN \
       echo 'opcache.max_accelerated_files=4000'; \
       echo 'opcache.revalidate_freq=2'; \
       echo 'opcache.fast_shutdown=1'; \
-  } > /etc/php82/conf.d/opcache-recommended.ini; \
+  } > /etc/php83/conf.d/opcache-recommended.ini; \
   \
   { \
       echo 'session.cookie_httponly=1'; \
       echo 'session.use_strict_mode=1'; \
-  } > /etc/php82/conf.d/session-strict.ini; \
+  } > /etc/php83/conf.d/session-strict.ini; \
   \
   { \
       echo 'allow_url_fopen=Off'; \
@@ -53,7 +53,7 @@ RUN \
       echo 'memory_limit=${MEMORY_LIMIT}'; \
       echo 'post_max_size=${UPLOAD_LIMIT}'; \
       echo 'upload_max_filesize=${UPLOAD_LIMIT}'; \
-  } > /etc/php82/conf.d/phpmyadmin-misc.ini && \
+  } > /etc/php83/conf.d/phpmyadmin-misc.ini && \
   echo "**** install phpmyadmin ****" && \
   mkdir -p /app/www/public && \
   if [ -z ${PHPMYADMIN_VERSION+x} ]; then \
