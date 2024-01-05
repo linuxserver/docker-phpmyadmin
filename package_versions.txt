@@ -156,7 +156,7 @@ symfony/var-exporter              v5.4.19                php-composer
 tecnickcom/tcpdf                  6.6.2                  php-composer  
 thecodingmachine/safe             v1.3.3                 php-composer  
 twig/twig                         v3.5.0                 php-composer  
-tzdata                            2023c-r1               apk           
+tzdata                            2023d-r0               apk           
 utmps-libs                        0.1.2.2-r0             apk           
 web-auth/cose-lib                 v3.3.12                php-composer  
 web-auth/metadata-service         v3.3.12                php-composer  
