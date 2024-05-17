@@ -33,7 +33,7 @@ fgrosse/phpasn1                   v2.5.0                 php-composer
 fig/http-message-util             1.1.5                  php-composer    
 findutils                         4.9.0-r5               apk             
 freetype                          2.13.2-r0              apk             
-git                               2.43.0-r0              apk             
+git                               2.43.4-r0              apk             
 google/recaptcha                  1.2.4                  php-composer    
 jq                                1.7.1-r0               apk             
 league/uri                        6.4.0                  php-composer    
