@@ -28,7 +28,7 @@ Find us at:
 
 # [linuxserver/phpmyadmin](https://github.com/linuxserver/docker-phpmyadmin)
 
-[![Scarf.io pulls](https://scarf.sh/installs-badge/linuxserver-ci/linuxserver%2Fphpmyadmin?color=94398d&label-color=555555&logo-color=ffffff&style=for-the-badge&package-type=docker)](https://scarf.sh/gateway/linuxserver-ci/docker/linuxserver%2Fphpmyadmin)
+[![Scarf.io pulls](https://scarf.sh/installs-badge/linuxserver-ci/linuxserver%2Fphpmyadmin?color=94398d&label-color=555555&logo-color=ffffff&style=for-the-badge&package-type=docker)](https://scarf.sh)
 [![GitHub Stars](https://img.shields.io/github/stars/linuxserver/docker-phpmyadmin.svg?color=94398d&labelColor=555555&logoColor=ffffff&style=for-the-badge&logo=github)](https://github.com/linuxserver/docker-phpmyadmin)
 [![GitHub Release](https://img.shields.io/github/release/linuxserver/docker-phpmyadmin.svg?color=94398d&labelColor=555555&logoColor=ffffff&style=for-the-badge&logo=github)](https://github.com/linuxserver/docker-phpmyadmin/releases)
 [![GitHub Package Repository](https://img.shields.io/static/v1.svg?color=94398d&labelColor=555555&logoColor=ffffff&style=for-the-badge&label=linuxserver.io&message=GitHub%20Package&logo=github)](https://github.com/linuxserver/docker-phpmyadmin/packages)
@@ -281,6 +281,7 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
+* **24.05.24:** - Rebase to Alpine 3.20.
 * **28.12.23:** - Rebase to Alpine 3.19 with php 8.3.
 * **25.12.23:** - Existing users should update: site-confs/default.conf - Cleanup default site conf.
 * **06.09.23:** - Add support for custom themes.
