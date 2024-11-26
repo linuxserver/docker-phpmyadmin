@@ -5,18 +5,26 @@ mkdir -p \
     /config/phpmyadmin \
     /app/www/public/tmp
 
-if [ ! -f /config/phpmyadmin/config.secret.inc.php ]; then
+if [[ ! -f /config/phpmyadmin/config.secret.inc.php ]]; then
     cat >/config/phpmyadmin/config.secret.inc.php <<EOT
 <?php
 \$cfg['blowfish_secret'] = '$(tr -dc 'a-zA-Z0-9~!@#$%^&*_()+}{?></";.,[]=-' </dev/urandom | fold -w 32 | head -n 1)';
 EOT
 fi
 
-if [ ! -f /config/phpmyadmin/config.user.inc.php ]; then
+if [[ -n "${PMA_CONFIG_BASE64}" ]]; then
+    echo "${PMA_CONFIG_BASE64}" | base64 -d > /config/phpmyadmin/config.inc.php
+fi
+
+if [[ -n "${PMA_USER_CONFIG_BASE64}" ]]; then
+    echo "${PMA_USER_CONFIG_BASE64}" | base64 -d > /config/phpmyadmin/config.user.inc.php
+fi
+
+if [[ ! -f /config/phpmyadmin/config.user.inc.php ]]; then
     touch /config/phpmyadmin/config.user.inc.php
 fi
 
-if [ ! -f /config/phpmyadmin/config.inc.php ]; then
+if [[ ! -f /config/phpmyadmin/config.inc.php ]]; then
     cp /defaults/config.inc.php /config/phpmyadmin/config.inc.php
 fi
 
