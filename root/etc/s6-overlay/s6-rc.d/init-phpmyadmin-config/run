@@ -5,7 +5,7 @@ mkdir -p \
     /config/phpmyadmin \
     /app/www/public/tmp
 
-if [ ! -f /config/phpmyadmin/config.secret.inc.php ]; then
+if [[ ! -f /config/phpmyadmin/config.secret.inc.php ]]; then
     cat >/config/phpmyadmin/config.secret.inc.php <<EOT
 <?php
 \$cfg['blowfish_secret'] = '$(tr -dc 'a-zA-Z0-9~!@#$%^&*_()+}{?></";.,[]=-' </dev/urandom | fold -w 32 | head -n 1)';
