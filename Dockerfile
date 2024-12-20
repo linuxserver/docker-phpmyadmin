@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:1
 
-FROM ghcr.io/linuxserver/baseimage-alpine-nginx:3.20
+FROM ghcr.io/linuxserver/baseimage-alpine-nginx:3.21
 
 # set version label
 ARG BUILD_DATE
@@ -11,9 +11,9 @@ LABEL maintainer="thespad"
 
 # environment settings
 ARG PHPMYADMIN_RELEASE_GPG_KEY="3D06A59ECE730EB71B511C17CE752F178259BD92"
-ENV MAX_EXECUTION_TIME 600
-ENV MEMORY_LIMIT 512M
-ENV UPLOAD_LIMIT 8192K
+ENV MAX_EXECUTION_TIME=600
+ENV MEMORY_LIMIT=512M
+ENV UPLOAD_LIMIT=8192K
 
 RUN \
   apk add --no-cache --virtual=build-dependencies \

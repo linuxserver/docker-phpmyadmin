@@ -65,6 +65,23 @@ We support all of the official [environment variables](https://docs.phpmyadmin.n
 
 For more information check out the [phpmyadmin documentation](https://www.phpmyadmin.net/docs/).
 
+## Read-Only Operation
+
+This image can be run with a read-only container filesystem. For details please [read the docs](https://docs.linuxserver.io/misc/read-only/).
+
+### Caveats
+
+* Custom themes are not supported
+
+## Non-Root Operation
+
+This image can be run with a non-root user. For details please [read the docs](https://docs.linuxserver.io/misc/non-root/).
+
+### Caveats
+
+* `/tmp` must be mounted to tmpfs
+* Custom themes are not supported
+
 ## Usage
 
 To help you get started creating a container from this image you can either use docker-compose or the docker cli.
@@ -122,6 +139,8 @@ Containers are configured using parameters passed at runtime (such as those abov
 | `-e PMA_ARBITRARY=1` | Set to `1` to allow you to connect to any server. Setting to `0` will only allow you to connect to specified hosts (See Application Setup) |
 | `-e PMA_ABSOLUTE_URI=https://phpmyadmin.example.com` | Set the URL you will use to access the web frontend |
 | `-v /config` | Persistent config files |
+| `--read-only=true` | Run container with a read-only filesystem. Please [read the docs](https://docs.linuxserver.io/misc/read-only/). |
+| `--user=1000:1000` | Run container with a non-root user. Please [read the docs](https://docs.linuxserver.io/misc/non-root/). |
 
 ## Environment variables from files (Docker secrets)
 
@@ -285,6 +304,7 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
+* **19.12.24:** - Rebase to Alpine 3.21.
 * **27.05.24:** - Existing users should update their nginx confs to avoid http2 deprecation warnings.
 * **24.05.24:** - Rebase to Alpine 3.20.
 * **28.12.23:** - Rebase to Alpine 3.19 with php 8.3.

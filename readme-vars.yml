@@ -26,6 +26,13 @@ param_usage_include_vols: true
 param_volumes:
   - {vol_path: "/config", vol_host_path: "/path/to/{{ project_name }}/config", desc: "Persistent config files"}
 # application setup block
+readonly_supported: true
+readonly_message: |
+  * Custom themes are not supported
+nonroot_supported: true
+nonroot_message: |
+  * `/tmp` must be mounted to tmpfs
+  * Custom themes are not supported
 app_setup_block_enabled: true
 app_setup_block: |
   This image uses nginx, in contrast to the official images which offer fpm-only or Apache variants.
@@ -90,6 +97,7 @@ init_diagram: |
   "phpmyadmin:latest" <- Base Images
 # changelog
 changelogs:
+  - {date: "19.12.24:", desc: "Rebase to Alpine 3.21."}
   - {date: "27.05.24:", desc: "Existing users should update their nginx confs to avoid http2 deprecation warnings."}
   - {date: "24.05.24:", desc: "Rebase to Alpine 3.20."}
   - {date: "28.12.23:", desc: "Rebase to Alpine 3.19 with php 8.3."}
