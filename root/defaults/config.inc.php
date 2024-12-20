@@ -139,6 +139,7 @@ $i--;
 /* Uploads setup */
 $cfg['UploadDir'] = '';
 $cfg['SaveDir'] = '';
+$cfg['TempDir'] = '/tmp';
 
 if (isset($_ENV['MAX_EXECUTION_TIME'])) {
     $cfg['ExecTimeLimit'] = $_ENV['MAX_EXECUTION_TIME'];
