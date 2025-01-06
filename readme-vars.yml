@@ -28,10 +28,10 @@ param_volumes:
 # application setup block
 readonly_supported: true
 readonly_message: |
+  * `/tmp` must be mounted to tmpfs
   * Custom themes are not supported
 nonroot_supported: true
 nonroot_message: |
-  * `/tmp` must be mounted to tmpfs
   * Custom themes are not supported
 app_setup_block_enabled: true
 app_setup_block: |
