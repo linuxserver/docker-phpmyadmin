@@ -3,10 +3,10 @@ acl-libs                          2.3.2-r1          apk
 alpine-baselayout                 3.6.8-r1          apk             
 alpine-baselayout-data            3.6.8-r1          apk             
 alpine-keys                       2.5-r0            apk             
-alpine-release                    3.21.2-r0         apk             
+alpine-release                    3.21.3-r0         apk             
 aom-libs                          3.11.0-r0         apk             
 apache2-utils                     2.4.62-r0         apk             
-apk-tools                         2.14.6-r2         apk             
+apk-tools                         2.14.6-r3         apk             
 apr                               1.7.5-r0          apk             
 apr-util                          1.6.3-r1          apk             
 argon2-libs                       20190702-r5       apk             
@@ -28,7 +28,7 @@ coreutils                         9.5-r2            apk
 coreutils-env                     9.5-r2            apk             
 coreutils-fmt                     9.5-r2            apk             
 coreutils-sha512sum               9.5-r2            apk             
-curl                              8.12.0-r0         apk             
+curl                              8.12.1-r0         apk             
 dasprid/enum                      1.0.6             php-composer    
 fgrosse/phpasn1                   v2.5.0            php-composer    
 fig/http-message-util             1.1.5             php-composer    
@@ -45,7 +45,7 @@ libavif                           1.0.4-r0          apk
 libbsd                            0.12.2-r0         apk             
 libbz2                            1.0.8-r6          apk             
 libcrypto3                        3.3.3-r0          apk             
-libcurl                           8.12.0-r0         apk             
+libcurl                           8.12.1-r0         apk             
 libdav1d                          1.5.0-r0          apk             
 libedit                           20240808.3.1-r0   apk             
 libexpat                          2.6.4-r0          apk             
@@ -76,8 +76,8 @@ libxt                             1.3.1-r0          apk
 libzip                            1.11.2-r0         apk             
 linux-pam                         1.6.1-r1          apk             
 logrotate                         3.21.0-r1         apk             
-musl                              1.2.5-r8          apk             
-musl-utils                        1.2.5-r8          apk             
+musl                              1.2.5-r9          apk             
+musl-utils                        1.2.5-r9          apk             
 nano                              8.2-r0            apk             
 ncurses-terminfo-base             6.5_p20241006-r3  apk             
 netcat-openbsd                    1.226.1.1-r0      apk             
@@ -158,7 +158,7 @@ symfony/var-exporter              v5.4.45           php-composer
 tecnickcom/tcpdf                  6.8.0             php-composer    
 thecodingmachine/safe             v1.3.3            php-composer    
 twig/twig                         v3.11.3           php-composer    
-tzdata                            2024b-r1          apk             
+tzdata                            2025a-r0          apk             
 utmps-libs                        0.1.2.3-r2        apk             
 web-auth/cose-lib                 v3.3.12           php-composer    
 web-auth/metadata-service         v3.3.12           php-composer    
