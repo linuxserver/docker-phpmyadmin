@@ -22,7 +22,7 @@ ca-certificates                   20241121-r1       apk
 ca-certificates-bundle            20241121-r1       apk             
 catatonit                         0.2.0-r0          apk             
 code-lts/u2f-php-server           v1.2.2            php-composer    
-composer                          2.8.5             binary          
+composer                          2.8.6             binary          
 composer/ca-bundle                1.5.5             php-composer    
 coreutils                         9.5-r2            apk             
 coreutils-env                     9.5-r2            apk             
