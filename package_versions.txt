@@ -22,7 +22,7 @@ ca-certificates                   20241121-r1       apk
 ca-certificates-bundle            20241121-r1       apk             
 catatonit                         0.2.0-r0          apk             
 code-lts/u2f-php-server           v1.2.2            php-composer    
-composer                          2.8.6             binary          
+composer                          2.8.7             binary          
 composer/ca-bundle                1.5.5             php-composer    
 coreutils                         9.5-r2            apk             
 coreutils-env                     9.5-r2            apk             
@@ -158,7 +158,7 @@ symfony/var-exporter              v5.4.45           php-composer
 tecnickcom/tcpdf                  6.8.0             php-composer    
 thecodingmachine/safe             v1.3.3            php-composer    
 twig/twig                         v3.11.3           php-composer    
-tzdata                            2025a-r0          apk             
+tzdata                            2025b-r0          apk             
 utmps-libs                        0.1.2.3-r2        apk             
 web-auth/cose-lib                 v3.3.12           php-composer    
 web-auth/metadata-service         v3.3.12           php-composer    
