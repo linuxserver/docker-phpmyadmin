@@ -301,6 +301,7 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
+* **05.07.25:** - Rebase to Alpine 3.22.
 * **19.12.24:** - Rebase to Alpine 3.21.
 * **27.05.24:** - Existing users should update their nginx confs to avoid http2 deprecation warnings.
 * **24.05.24:** - Rebase to Alpine 3.20.
