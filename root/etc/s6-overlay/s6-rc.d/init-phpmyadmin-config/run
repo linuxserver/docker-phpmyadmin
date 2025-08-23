@@ -27,6 +27,10 @@ if [[ ! -f /config/phpmyadmin/config.inc.php ]]; then
     cp /defaults/config.inc.php /config/phpmyadmin/config.inc.php
 fi
 
+if [[ ! -f /config/phpmyadmin/helpers.php ]]; then
+    cp /defaults/helpers.php /config/phpmyadmin/helpers.php
+fi
+
 if [[ -z ${LSIO_READ_ONLY_FS} ]] && [[ -z ${LSIO_NON_ROOT_USER} ]]; then
     # Set up themes
     if [[ -d "/config/themes" && ! -L "/app/www/public/themes" ]]; then
