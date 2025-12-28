@@ -95,6 +95,7 @@ init_diagram: |
   "phpmyadmin:latest" <- Base Images
 # changelog
 changelogs:
+  - {date: "28.12.25:", desc: "Rebase to Alpine 3.23."}
   - {date: "23.08.25:", desc: "Add support for mTLS. Existing users will need to delete their config.inc.php and restart the container."}
   - {date: "05.07.25:", desc: "Rebase to Alpine 3.22."}
   - {date: "19.12.24:", desc: "Rebase to Alpine 3.21."}
