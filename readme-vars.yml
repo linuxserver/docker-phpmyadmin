@@ -90,7 +90,7 @@ init_diagram: |
     svc-php-fpm -> legacy-services
   }
   Base Images: {
-    "baseimage-alpine-nginx:3.22" <- "baseimage-alpine:3.22"
+    "baseimage-alpine-nginx:3.23" <- "baseimage-alpine:3.23"
   }
   "phpmyadmin:latest" <- Base Images
 # changelog
