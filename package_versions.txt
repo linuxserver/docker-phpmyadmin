@@ -57,7 +57,7 @@ libintl                           0.24.1-r1             apk
 libjpeg-turbo                     3.1.2-r0              apk             
 libmd                             1.1.0-r0              apk             
 libncursesw                       6.5_p20251123-r0      apk             
-libpng                            1.6.54-r0             apk             
+libpng                            1.6.55-r0             apk             
 libproc2                          4.0.5-r0              apk             
 libpsl                            0.21.5-r3             apk             
 libsharpyuv                       1.6.0-r0              apk             
@@ -86,7 +86,7 @@ ncurses-terminfo-base             6.5_p20251123-r0      apk
 netcat-openbsd                    1.234.1-r0            apk             
 nghttp2-libs                      1.68.0-r0             apk             
 nghttp3                           1.13.1-r0             apk             
-nginx                             1.28.2-r0             apk             
+nginx                             1.28.2-r1             apk             
 nikic/fast-route                  v1.3.0                php-composer    
 oniguruma                         6.9.10-r0             apk             
 openssl                           3.5.5-r0              apk             
