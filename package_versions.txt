@@ -57,7 +57,7 @@ libintl                           0.24.1-r1             apk
 libjpeg-turbo                     3.1.2-r0              apk             
 libmd                             1.1.0-r0              apk             
 libncursesw                       6.5_p20251123-r0      apk             
-libpng                            1.6.56-r0             apk             
+libpng                            1.6.57-r0             apk             
 libproc2                          4.0.5-r0              apk             
 libpsl                            0.21.5-r3             apk             
 libsharpyuv                       1.6.0-r0              apk             
@@ -65,7 +65,7 @@ libsm                             1.2.6-r0              apk
 libssl3                           3.5.5-r0              apk             
 libstdc++                         15.2.0-r2             apk             
 libunistring                      1.4.1-r0              apk             
-libuuid                           2.41.2-r0             apk             
+libuuid                           2.41.4-r0             apk             
 libwebp                           1.6.0-r0              apk             
 libx11                            1.8.12-r1             apk             
 libxau                            1.0.12-r0             apk             
