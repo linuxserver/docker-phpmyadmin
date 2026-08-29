@@ -22,7 +22,7 @@ ca-certificates                   20260611-r0       apk
 ca-certificates-bundle            20260611-r0       apk             
 catatonit                         0.2.1-r0          apk             
 code-lts/u2f-php-server           v1.2.2            php-composer    
-composer                          2.10.2            binary          
+composer                          2.10.3            binary          
 composer/ca-bundle                1.5.8             php-composer    
 coreutils                         9.11-r0           apk             
 coreutils-env                     9.11-r0           apk             
@@ -45,7 +45,7 @@ libattr                           2.5.2-r2          apk
 libavif                           1.4.1-r0          apk             
 libbsd                            0.12.2-r0         apk             
 libbz2                            1.0.8-r6          apk             
-libcrypto3                        3.5.7-r0          apk             
+libcrypto3                        3.5.8-r0          apk             
 libcurl                           8.21.0-r0         apk             
 libdav1d                          1.5.3-r0          apk             
 libedit                           20260508.3.1-r1   apk             
@@ -62,7 +62,7 @@ libproc2                          4.0.6-r0          apk
 libpsl                            0.21.5-r3         apk             
 libsharpyuv                       1.6.0-r0          apk             
 libsm                             1.2.6-r0          apk             
-libssl3                           3.5.7-r0          apk             
+libssl3                           3.5.8-r0          apk             
 libstdc++                         15.2.0-r5         apk             
 libunistring                      1.4.2-r0          apk             
 libuuid                           2.42.1-r0         apk             
@@ -88,7 +88,7 @@ nghttp2-libs                      1.69.0-r0         apk
 nginx                             1.30.4-r1         apk             
 nikic/fast-route                  v1.3.0            php-composer    
 oniguruma                         6.9.10-r0         apk             
-openssl                           3.5.7-r0          apk             
+openssl                           3.5.8-r0          apk             
 paragonie/constant_time_encoding  v2.8.2            php-composer    
 paragonie/random_compat           v9.99.100         php-composer    
 paragonie/sodium_compat           v1.23.0           php-composer    
